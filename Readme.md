@@ -14,3 +14,5 @@ Algunas metas específicas asociadas con este objetivo podrían incluir:
 -Integrar un sistema de análisis de datos para obtener información útil sobre la demanda de productos y tendencias del mercado, permitiendo una toma de decisiones informada.
 
 -Realizar  un proceso de gestión de los insumos a utlizar por cada producto para llevar a cabo el proceso de confeccion mas eficaz
+
+![DB productos textiles](https://github.com/LauraRamirezCampus/Gestion-de-productos-textiles-deportivos/assets/124936044/1c0d3488-9199-4bb4-991c-6fdd826c6c79)
