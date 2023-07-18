@@ -19,4 +19,4 @@ Este objetivo se centra en mejorar la gestión de textiles, abarcando aspectos c
 
 **6.** Realizar la verificacion de datos correctamente.
 
-![1689650696119](https://github.com/LauraRamirezCampus/Gestion-de-productos-textiles-deportivos/assets/124936044/2abed166-556a-4ba4-a1f5-7c600765ec63)
+![DB productos textiles (3)](https://github.com/LauraRamirezCampus/Gestion-de-productos-textiles-deportivos/assets/124936044/2116b16d-e61b-4d92-9a68-4e96fe8f25da)
