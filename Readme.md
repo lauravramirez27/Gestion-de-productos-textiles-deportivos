@@ -24,3 +24,5 @@ ES DECIR
 
   -Crear una consulta que permita saber si hay productos suficientes en inventario para los pedidos que se realizado.
   -Hacer un registro que muestre cuales son los productos mas pedidos para obtener información útil sobre la demanda de productos y tendencias del mercado, permitiendo una toma de decisiones informada.
+  
+![1689650696119](https://github.com/LauraRamirezCampus/Gestion-de-productos-textiles-deportivos/assets/124936044/2abed166-556a-4ba4-a1f5-7c600765ec63)
