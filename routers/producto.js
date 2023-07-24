@@ -1,7 +1,7 @@
 import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
-import proxyProducto from "../middleware/proxyBodegas.js";
+import proxyProducto from "../middleware/proxyProductos.js";
 
 const Productos = Router();
 dotenv.config();
