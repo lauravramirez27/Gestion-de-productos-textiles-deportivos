@@ -10,7 +10,7 @@ dotenv.config();
  */
 Productos.get("/:id?",(req,res)=>{
     let sql = (req.params.id)
-    ?[`SELECT * FROM producto WHERE id=${req.params.id}`]
+    ?[`SELECT * FROM producto WHERE id=${req.params.id}`] 
     :[`SELECT * FROM producto ORDER BY nombre`]
     con.query(...sql,
      (err,data,fils)=>{
@@ -21,5 +21,19 @@ Productos.get("/:id?",(req,res)=>{
      )
  
  })
+ /**
+  * Crear un producto
+  */
+ Productos.post('/',(req, res)=>{
+    con.query(
+        `INSERT INTO producto SET ?`,
+        req.body,
+        (err, data, fils)=>{
+            console.log(err);
+            console.table(data);
+            res.status(200).send(data)
+        }
+    )
+})
 
  export default Productos;

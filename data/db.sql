@@ -1,5 +1,5 @@
-DROP DATABASE  productos_Textiles;
 USE  productos_Textiles;
+DROP DATABASE productos_Textiles;
 CREATE DATABASE productos_Textiles;
 USE  productos_Textiles;
 
@@ -11,11 +11,10 @@ CREATE TABLE proveedores(
 );
 
 
-DROP TABLE proveedores;
+
 
 CREATE TABLE Insumos(
     id_Insumo INT(20)PRIMARY KEY,
-    id_proveedor INT(20),
     nombre VARCHAR(55),
     color INT(20)
 );
@@ -38,7 +37,6 @@ CREATE TABLE producto(
     color VARCHAR(20)
 
 );
-DROP TABLE producto;
 CREATE TABLE Producto_Insumo(
     id_PI INT(20)PRIMARY KEY,
     id_Insumo INT(20),
@@ -84,17 +82,74 @@ ADD CONSTRAINT fk_producto1 FOREIGN KEY (id_Producto) REFERENCES producto(id_Pro
 ADD CONSTRAINT fk_Insumo FOREIGN KEY (id_Insumo) REFERENCES insumos(id_Insumo);
 
 ALTER TABLE producto_Insumo
-ADD CONSTRAINT fk_producto1 FOREIGN KEY (id_Producto) REFERENCES producto(id_Producto);
+ADD CONSTRAINT fk_producto2 FOREIGN KEY (id_Producto) REFERENCES producto(id_Producto);
 ALTER TABLE producto
-ADD CONSTRAINT fk_categoria1 FOREIGN KEY (id_Categoria) REFERENCES categoria(id_Categoria);
+ADD CONSTRAINT fk_categoria2 FOREIGN KEY (id_Categoria) REFERENCES categoria(id_Categoria);
 
 ALTER TABLE inventario
-ADD CONSTRAINT fk_producto FOREIGN KEY (id_Producto) REFERENCES producto(id_Producto);
+ADD CONSTRAINT fk_producto3 FOREIGN KEY (id_Producto) REFERENCES producto(id_Producto);
 
 ALTER TABLE Pedido
 ADD CONSTRAINT fk_inventario FOREIGN KEY (id_Inventario) REFERENCES inventario(id_Inventario),
 ADD CONSTRAINT fk_cliente FOREIGN KEY (id_Cliente) REFERENCES cliente(id_Cliente);
 
+/**/
+-- Insertar datos de prueba en la tabla proveedores
+INSERT INTO proveedores (id_Proveedor, nombre, direccion, telefono)
+VALUES
+    (1, 'Proveedor A', 'Calle 123, Ciudad X', '99999999'),
+    (2, 'Proveedor B', 'Avenida 456, Ciudad Y', '33333333');
+
+-- Insertar datos de prueba en la tabla insumos
+INSERT INTO Insumos (id_Insumo, nombre, color)
+VALUES
+    (1, 'Tela Algodon', "blanco"),
+    (2, 'Tela poliester',"azul"),
+    (3, 'Tela Elástica', "verde");
+
+-- Insertar datos de prueba en la tabla compra_Insumos
+INSERT INTO compra_Insumos (id_Compra, id_Proveedor, id_Insumo, cantidad, precio)
+VALUES
+    (1, 1, 1, 50, 5000),
+    (2, 2, 2, 80, 8000),
+    (3, 1, 3, 100, 6000);
+
+-- Insertar datos de prueba en la tabla producto
+INSERT INTO producto (id_Producto, id_Categoria, nombre, talla, color)
+VALUES
+    (1, 1, 'Camiseta Deportiva', 'M', 'Azul'),
+    (2, 2, 'Pantalón Deportivo', 'L', 'Negro');
+
+-- Insertar datos de prueba en la tabla Producto_Insumo
+INSERT INTO Producto_Insumo (id_PI, id_Insumo, id_Producto, cantidad)
+VALUES
+    (1, 1, 1, 50),
+    (2, 2, 1, 30),
+    (3, 3, 2, 40);
+
+-- Insertar datos de prueba en la tabla inventario
+INSERT INTO inventario (id_Inventario, id_Producto, cantidad)
+VALUES
+    (1, 1, 80),
+    (2, 2, 60);
+
+-- Insertar datos de prueba en la tabla pedido
+INSERT INTO pedido (id_pedido, id_cliente, id_Inventario, estado, cantidad)
+VALUES
+    (1, 1, 1, 'En Proceso', 20),
+    (2, 2, 2, 'Entregado', 15);
+
+-- Insertar datos de prueba en la tabla categoria
+INSERT INTO categoria (id_Categoria, nombre, descripcion)
+VALUES
+    (1, 'Camisetas', 'Camisetas unisex'),
+    (2, 'Pantalones', 'joggers anchos');
+
+-- Insertar datos de prueba en la tabla cliente
+INSERT INTO cliente (id_Cliente, nombre, direccion, telefono)
+VALUES
+    (1, 'Cliente A', 'Calle Principal, Ciudad Z', '555-123-4567'),
+    (2, 'Cliente B', 'Avenida Central, Ciudad W', '555-987-6543');
 
 
 
