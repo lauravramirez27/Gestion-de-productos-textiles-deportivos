@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import Productos from "./routers/producto.js";
 import Proveedores from "./routers/proveedores.js";
+import Insumos from "./routers/insumos.js";
 
 dotenv.config();
 const expressApp = express();
@@ -10,6 +11,7 @@ const expressApp = express();
 expressApp.use(express.json());
 expressApp.use('/Productos', Productos);
 expressApp.use('/Proveedores', Proveedores);
+expressApp.use('/Insumos', Insumos);
 
 let config = JSON.parse(process.env.SERVER_CONFIG);
 expressApp.listen(config, ()=>{
