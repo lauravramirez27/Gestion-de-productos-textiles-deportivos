@@ -1,6 +1,7 @@
 import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
+import proxyProducto from "../middleware/proxyBodegas.js";
 
 const Productos = Router();
 dotenv.config();
@@ -24,7 +25,7 @@ Productos.get("/:id?",(req,res)=>{
  /**
   * Crear un producto
   */
- Productos.post('/',(req, res)=>{
+ Productos.post('/',proxyProducto,(req, res)=>{
     con.query(
         `INSERT INTO producto SET ?`,
         req.body,
