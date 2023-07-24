@@ -1,6 +1,7 @@
 import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
+import proxyInsumo from "../middleware/proxyInsumos.js";
 
 const Insumos = Router();
 dotenv.config();
@@ -19,5 +20,20 @@ Insumos.get("/:id?",(req,res)=>{
          res.send(data);
      }
      )});
+
+     /**
+  * Crear un Insumo
+  */
+    Insumos.post('/',proxyInsumo,(req, res)=>{
+    con.query(
+        `INSERT INTO Insumos SET ?`,
+        req.body,
+        (err, data, fils)=>{
+            console.log(err);
+            console.table(data);
+            res.status(200).send(data)
+        }
+    )
+})
 
      export default Insumos;
