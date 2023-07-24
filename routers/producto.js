@@ -37,4 +37,45 @@ Productos.get("/:id?",(req,res)=>{
     )
 })
 
+/**Actualizar un producto */
+ Productos.put('/:id', (req, res) => {
+     const productId = req.params.id;
+     const updatedProduct = req.body;
+
+     con.query(
+         'UPDATE producto SET ? WHERE id = ?',
+         [updatedProduct, productId],
+         (err, data) => {
+             if (err) {
+                console.log("ERROR A ACTUALIZA");
+                 console.log(err);
+                 res.send(data);
+             } else {
+                 res.send({"Status":"200", "Message":"SE ACTUALIZA"});
+             }
+         }
+     );
+ });
+
+ // Eliminar un producto por su ID
+Productos.delete('/:id', (req, res) => {
+    const productId = req.params.id;
+
+    con.query(
+        'DELETE FROM producto WHERE id = ?',
+        [productId ],
+        (err, data) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send('Error al eliminar el producto.');
+            } else {
+                 console.log('Producto eliminado:', data.affectedRows);
+                res.status(200).send('Producto eliminado correctamente.');
+            }
+        }
+    );
+});
+
+
+
  export default Productos;
