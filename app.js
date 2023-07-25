@@ -8,6 +8,7 @@ import Compra from "./routers/compraInsumo.js";
 import { CONFIG } from './config/config.js';
 import P_insumo from "./routers/P_insumo.js";
 import Inventario from "./routers/inventario.js";
+import Pedido from "./routers/pedido.js";
 
 const expressApp = express();
 
@@ -18,6 +19,7 @@ expressApp.use('/Insumos', Insumos);
 expressApp.use('/CompraInsumo', Compra);
 expressApp.use('/P_insumo', P_insumo);
 expressApp.use('/Inventario', Inventario);
+expressApp.use('/Pedido', Pedido);
 
 
 expressApp.listen(CONFIG, ()=>{
