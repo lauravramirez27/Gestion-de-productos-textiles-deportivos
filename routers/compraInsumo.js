@@ -1,6 +1,7 @@
 import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
+import proxyCompra from "../middleware/proxyCompra.js";
 
 
 const Compra = Router();
@@ -20,5 +21,20 @@ Compra.get("/:id?",(req,res)=>{
          res.send(data);
      }
      )});
+
+      /**
+  * Crear un producto
+  */
+ Compra.post('/',proxyCompra,(req, res)=>{
+    con.query(
+        `INSERT INTO compra_Insumos SET ?`,
+        req.body,
+        (err, data, fils)=>{
+            console.log(err);
+            console.table(data);
+            res.status(200).send(data)
+        }
+    )
+})
 
 export default Compra;
