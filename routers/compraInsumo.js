@@ -23,7 +23,7 @@ Compra.get("/:id?",(req,res)=>{
      )});
 
       /**
-  * Crear un producto
+  * Crear una compra
   */
  Compra.post('/',proxyCompra,(req, res)=>{
     con.query(
