@@ -66,14 +66,6 @@ __decorate([
     __metadata("design:type", String)
 ], pedido.prototype, "estado", void 0);
 __decorate([
-    Expose({ name: "talla" }),
-    Transform(({ value }) => { if (/^[a-z A-Z]+$/.test(value) || value == null)
-        return value;
-    else
-        throw { status: 400, message: "Error en el tipo de parametro talla" }; }, { toClassOnly: true }),
-    __metadata("design:type", String)
-], pedido.prototype, "talla", void 0);
-__decorate([
     Expose({ name: "cantidad" }),
     Transform(({ value }) => {
         let data = /^[0-9]+$/g.test(value);

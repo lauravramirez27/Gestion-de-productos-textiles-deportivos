@@ -58,24 +58,40 @@ Productos.get("/:id?",(req,res)=>{
  });
 
  // Eliminar un producto por su ID
-Productos.delete('/:id', (req, res) => {
-    const productId = req.params.id;
 
+
+
+// Productos.delete('/:id_Producto', (req, res) => {
+//     const productId = req.params
+
+//     con.query(
+//         'DELETE FROM producto WHERE id = ?',
+//         [productId ],
+//         (err, data) => {
+//             if (err) {
+//                 console.log(err);
+//                 res.status(500).send('Error al eliminar el producto.');
+//             } else {
+//                  console.log('Producto eliminado:', data.affectedRows);
+//                 res.status(200).send('Producto eliminado correctamente.');
+//             }
+//         }
+//     );
+// });
+
+
+ // Eliminar un producto por su ID
+
+Productos.delete('/:id_Producto', (req, res)=>{
     con.query(
-        'DELETE FROM producto WHERE id = ?',
-        [productId ],
-        (err, data) => {
-            if (err) {
-                console.log(err);
-                res.status(500).send('Error al eliminar el producto.');
-            } else {
-                 console.log('Producto eliminado:', data.affectedRows);
-                res.status(200).send('Producto eliminado correctamente.');
-            }
+        `DELETE FROM producto WHERE ?`,
+        req.params,
+        (err, data, fils)=>{
+            console.log(err);
+            console.table(data);
+            res.send(data);
         }
-    );
-});
-
-
+    )
+})
 
  export default Productos;

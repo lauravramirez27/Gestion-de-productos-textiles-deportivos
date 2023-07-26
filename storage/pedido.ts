@@ -43,13 +43,6 @@ import { Type, Transform, Expose } from "class-transformer";
      @Transform(({value})=>{ if(/^[a-z A-Z]+$/.test(value) || value == null)return value; else throw {status:400, message: "Error en el tipo de parametro estado"}},{toClassOnly:true})
      estado:String;
 
-     /**
-      * /**
-      * validacion cantidad
-      */
-     @Expose({name:"talla"})
-     @Transform(({value})=>{ if(/^[a-z A-Z]+$/.test(value) || value == null)return value; else throw {status:400, message: "Error en el tipo de parametro talla"}},{toClassOnly:true})
-     talla:String;
 
      /**
       * validar color
