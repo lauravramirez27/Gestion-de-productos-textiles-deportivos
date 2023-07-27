@@ -3,7 +3,7 @@ import { Type, Transform, Expose } from "class-transformer";
 /**
  * Datos a validar
  * {
-    "id_Proveedor": 3,
+    "id_Proveedor": 90,
     "nombre": "Proveedor c",
     "direccion": "Calle 123, Ciudad X",
     "telefono": "99999999"

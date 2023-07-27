@@ -1,9 +1,10 @@
 import { Type, Transform, Expose } from "class-transformer";
+import { IsNotEmpty } from 'class-validator';
 /**
  * Datos a validar
  * 
  * {
-    "id_Producto": 1,
+    "id_Producto": 99,
     "id_Categoria": 1,
     "nombre": "Camiseta Deportiva ",
     "talla": "M",

@@ -2,15 +2,16 @@ import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
 import proxyCompra from "../middleware/proxyCompra.js";
+import { verificaToken } from "../JWT/ValidaToken.js";
 
 
 const Compra = Router();
 dotenv.config();
 
 /***
- * lista las compra de insumo alfabeticamente
+ * lista las compra de insumo 
  */
-Compra.get("/:id?",(req,res)=>{
+Compra.get("/:id?",verificaToken,(req,res)=>{
     let sql = (req.params.id)
     ?[`SELECT * FROM compra_Insumos WHERE id=${req.params.id}`] 
     :[`SELECT * FROM compra_Insumos`]
@@ -22,9 +23,9 @@ Compra.get("/:id?",(req,res)=>{
      }
      )});
 
-      /**
-  * Crear una compra
-  */
+    /**
+     * Crear una compra
+    */
  Compra.post('/',proxyCompra,(req, res)=>{
     con.query(
         `INSERT INTO compra_Insumos SET ?`,

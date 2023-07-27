@@ -6,18 +6,89 @@ Este objetivo se centra en mejorar la gestión de textiles, abarcando aspectos c
 
 ## __Objetivos especificos:__
 
-**1.** Elaborar la base de datos en MySQL con sus respectivas relaciones entre tablas que permita almacenar y llevar de manera organizada la información relacionada con los datos de la produccion textil:insumos,productos,Producto_Insumo,pedidos,proveedores,clientes,categorias.
+**1.** Elaborar la base de datos en MySQL con sus respectivas relaciones entre tablas que permita almacenar y llevar de manera organizada la información relacionada con los datos de la produccion textil:insumos,productos,Producto_Insumo,pedidos,proveedores,clientes,categorias y la compra de insumos.
 (se anexa relaciones entre las tablas en la imagen del diagrama)
 
-**2.** Realizar un EndPoint que permita agregar el registro del inventario,para mantener un sistema de seguimiento preciso de los productos disponibles.
+**2.** Realizar endPoints que permitan ver todos los registros de cada tabla.
 
-**3.** Realizar un EndPoint que permita hacer los pedidos.
+**3.** Crear un metodo con el cual se agreguen nuevos registros para cada necesidad.
 
-**4.** Realizar un EndPoint que permita listar los pedidos en orden desde la fecha mas antigua,para hacer entrega de los productos a los clientes de manera mas eficiente.
+**4.** Modificar los datos de un producto ya que la produccion esta en constante mejora y correccion de sus productos.
 
-**5.** Realizar un EndPoint que permita  saber si hay productos suficientes en inventario para los pedidos realizados.
+**5.** Eliminar un producto.
 
-**6.** Realizar la verificacion de datos correctamente.
-
+**Diagrama de base datos:**
 
 ![diagrama](https://github.com/LauraRamirezCampus/Gestion-de-productos-textiles-deportivos/assets/124936044/3399c3bf-a4d4-4c4a-802a-2574da82b7a2)
+
+
+## __Instalacion:__
+
+* Asegurarse de tener instalado Node.js y npm en tu sistema
+
+**Clonar Repositorio:** Clona este repositorio copiando el siguiente comando en tu terminal:
+
+```git clone https://github.com/LauraRamirezCampus/Gestion-de-productos-textiles-deportivos.git ```
+
+**1. Configura las variables de entorno:** Crea un archivo `.env` en la raíz del proyecto y configura las variables de entorno necesarias. Hay un ejemplo de las variables requeridas en el archivo `.env`.
+
+  (las variables vienen por defecto en el proyecto como usuario root y sin contraseña)
+
+```
+MY_CONFIG={"host":"localhost","user":"root","password":"","database":"productos_Textiles","port":3306}
+SERVER_CONFIG = {"hostname":"127.1.1.2","port":5507}
+JWT="LAURARAMIREZ" 
+```
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**2.**Permite agregar el registro del inventario,para mantener un sistema de seguimiento preciso de los productos disponibles.
+
+**3.** Permite ver todos los registros de inventario
+
+**4.** Permite listar los pedidos que aun no se han entregado y estan pendientes
+
+**5.** Permite listar los clientes registrados. 
+
+**6.** Permite listar los insumos ordenados alfabeticamente.
+
+**7.** Crea un insumo con su correcta validacion de datos.
+
+**8.** Permite ver la compra de insumos realizada-
+
+**9.** Agrega una nueva compra.
+
+**10.**
+
+

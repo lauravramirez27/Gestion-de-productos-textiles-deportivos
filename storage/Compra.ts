@@ -11,13 +11,11 @@ import { Type, Transform, Expose } from "class-transformer";
  */
   export class Compra {
     /**
-     * validacion id_Producto
+     * validacion id_Compra
      */
     @Expose({name:"id_Compra"})
     @Transform(({value})=>{if(Math.floor(value) || value == null)return Math.floor(value); else throw {status:400, message:"Error en el tipo de parametro id de la Compra"}},{toClassOnly:true})
     id_Compra:number
-
-
     
      /**
       * validacion id_Proveedor
@@ -25,9 +23,6 @@ import { Type, Transform, Expose } from "class-transformer";
      @Expose({name:"id_Proveedor"})
      @Transform(({value})=>{if(Math.floor(value) || value == null)return Math.floor(value); else throw {status:400, message:"Error en el tipo de parametro id del Proveedor"}},{toClassOnly:true})
      id_Proveedor:number;
-
-     
-
 
      /**
       * validar id_Insumo"
@@ -39,7 +34,7 @@ import { Type, Transform, Expose } from "class-transformer";
      /**
       * valida cantidad
       * 
-  */
+    */
      @Expose({name:"cantidad"})
      @Transform(({value})=>{
          let data = /^[0-9]+$/g.test(value);

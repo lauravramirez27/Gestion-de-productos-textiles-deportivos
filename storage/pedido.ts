@@ -17,7 +17,6 @@ import { Type, Transform, Expose } from "class-transformer";
     @Transform(({value})=>{if(Math.floor(value) || value == null)return Math.floor(value); else throw {status:400, message:"Error en el tipo de parametro id del pedido"}},{toClassOnly:true})
     id_pedido:number
 
-
     /**
      * validacion id_cliente
      */
@@ -28,7 +27,9 @@ import { Type, Transform, Expose } from "class-transformer";
          else throw {status: 401, message: "Error en el tipo de parametro id de cliente"}
      })
      id_cliente:number;
-
+    /**
+     * validacion id_inventario
+     */
      @Expose({name:"id_Inventario"})
      @Transform(({value})=>{
          let data = /^[0-9]+$/g.test(value);
@@ -43,9 +44,8 @@ import { Type, Transform, Expose } from "class-transformer";
      @Transform(({value})=>{ if(/^[a-z A-Z]+$/.test(value) || value == null)return value; else throw {status:400, message: "Error en el tipo de parametro estado"}},{toClassOnly:true})
      estado:String;
 
-
      /**
-      * validar color
+      * validar cantidad
       */
      @Expose({name:"cantidad"})
      @Transform(({value})=>{

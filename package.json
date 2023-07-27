@@ -5,7 +5,7 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "tsc":"tsc -w",
+    "tsc": "tsc -w",
     "dev": "nodemon --quiet app.js"
   },
   "keywords": [],
@@ -13,6 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "class-transformer": "0.5.1",
+    "class-validator": "0.14.0",
+    "jose": "4.14.4",
     "metadata": "0.1.0",
     "nodemon": "3.0.1",
     "typescript": "5.1.6"

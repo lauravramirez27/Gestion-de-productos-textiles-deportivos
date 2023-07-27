@@ -17,8 +17,6 @@ import { Type, Transform, Expose } from "class-transformer";
     @Transform(({value})=>{if(Math.floor(value) || value == null)return Math.floor(value); else throw {status:400, message:"Error en el tipo de parametro id "}},{toClassOnly:true})
     id_PI:number
 
-
-    
      /**
       * validacion id_Insumo
       */
@@ -26,16 +24,12 @@ import { Type, Transform, Expose } from "class-transformer";
      @Transform(({value})=>{if(Math.floor(value) || value == null)return Math.floor(value); else throw {status:400, message:"Error en el tipo de parametro id del Insumo"}},{toClassOnly:true})
      id_Insumo:number;
 
-     
-
-
      /**
       * validar id_Producto"
       */
      @Expose({name:"id_Producto"})
      @Transform(({value})=>{if(Math.floor(value) || value == null)return Math.floor(value); else throw {status:400, message:"Error en el tipo de parametro id del Producto"}},{toClassOnly:true})
      id_Producto:number;
-
      /**
       * valida cantidad
       * 
@@ -47,7 +41,6 @@ import { Type, Transform, Expose } from "class-transformer";
          else throw {status: 401, message: "Error en el tipo de parametro cantidad"}
      })
      cantidad:number;
-     
 
     constructor(p1:number,p2:number,p3:number,p4:number) {
         this.id_PI= p1;
