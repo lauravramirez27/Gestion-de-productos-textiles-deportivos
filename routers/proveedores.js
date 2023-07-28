@@ -2,7 +2,7 @@ import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
 import proxyProveedores from "../middleware/proxyProveedores.js";
-import Encriptar from "../JWT/Encriptar.js";
+//import Encriptar from "../JWT/Encriptar.js";
 import { verificaToken } from "../JWT/ValidaToken.js";
 
 
@@ -18,9 +18,12 @@ Proveedores.get("/:id?",verificaToken,(req,res)=>{
     :[`SELECT * FROM proveedores ORDER BY nombre`]
     con.query(...sql,
      (err,data,fils)=>{
-         console.log(err);
-         console.table(data);
-         res.send(data);
+        if (err) {
+            console.log(err);
+            res.send({Error: 400, Message: "Error en la consulta de los datos"});
+        }else{
+            res.send(data);
+        }
      }
      )
  
@@ -29,7 +32,7 @@ Proveedores.get("/:id?",verificaToken,(req,res)=>{
  /**
   * Crear un proveedor
   */
- Proveedores.post('/',Encriptar,proxyProveedores,(req, res)=>{
+ Proveedores.post('/',proxyProveedores,(req, res)=>{
     con.query(
         `INSERT INTO proveedores SET ?`,
         req.body,

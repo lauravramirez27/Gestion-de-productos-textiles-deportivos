@@ -22,7 +22,7 @@ Productos.get("/:id_Producto?",verificaToken,(req,res)=>{
      (err,data,fils)=>{
         if (err) {
             console.log(err);
-            res.send({Error: 400, Message: "Error en la consultad de los datos"});
+            res.send({Error: 400, Message: "Error en la consulta de los datos"});
         }else{
             // console.table(data);
             res.send(data);

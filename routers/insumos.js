@@ -30,9 +30,12 @@ Insumos.get("/:id?",verificaToken,(req,res)=>{
         `INSERT INTO Insumos SET ?`,
         req.body,
         (err, data, fils)=>{
-            console.log(err);
-            console.table(data);
-            res.status(200).send(data)
+            if (err) {
+                console.log(err);
+                res.send({Error: 400, Message: "Error en la consulta de los datos"});
+            }else{
+                res.send(data);
+            }
         }
     )
 })

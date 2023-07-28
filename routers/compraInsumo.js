@@ -17,9 +17,12 @@ Compra.get("/:id?",verificaToken,(req,res)=>{
     :[`SELECT * FROM compra_Insumos`]
     con.query(...sql,
      (err,data,fils)=>{
-         console.log(err);
-         console.table(data);
-         res.send(data);
+        if (err) {
+            console.log(err);
+            res.send({Error: 400, Message: "Error en la consulta de los datos"});
+        }else{
+            res.send(data);
+        }
      }
      )});
 

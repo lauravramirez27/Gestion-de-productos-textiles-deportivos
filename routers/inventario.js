@@ -2,7 +2,7 @@ import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
 import  proxyInventario  from "../middleware/proxyInventario.js";
-import Encriptar from "../JWT/Encriptar.js";
+//import Encriptar from "../JWT/Encriptar.js";
 import { verificaToken } from "../JWT/ValidaToken.js";
 
 const Inventario = Router();
@@ -25,14 +25,17 @@ Inventario.get("/:id?",verificaToken,(req,res)=>{
 /**
  * Crea registro de inventario
  */
-     Inventario.post('/',Encriptar,proxyInventario,(req, res)=>{
+     Inventario.post('/',proxyInventario,(req, res)=>{
         con.query(
             `INSERT INTO inventario SET ?`,
             req.body,
             (err, data, fils)=>{
-                console.log(err);
-                console.table(data);
-                res.status(200).send(data)
+                if (err) {
+                    console.log(err);
+                    res.send({Error: 400, Message: "Error en la consulta de los datos"});
+                }else{
+                    res.send(data);
+                }
             }
         )
     })

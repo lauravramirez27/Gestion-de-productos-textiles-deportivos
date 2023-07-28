@@ -3,14 +3,12 @@ import 'reflect-metadata';
 import {plainToClass} from 'class-transformer';
 import {proveedor} from "../controller/proveedores.js";
 
-const proxyProducto = express(); 
-proxyProducto.use(async(req,res,next)=>{
+const proxyProveedores = express(); 
+proxyProveedores.use(async(req,res,next)=>{
      console.log(req.body);
 
      const encoder = new TextEncoder();
         const jwtData =await jwtVerify(req.body,encoder.encode(process.env.JWT))
-        
-        
         let {iat,exp,...copy}=jwtData.payload
         let comparar ={
           "id_Producto": null,
@@ -37,4 +35,4 @@ proxyProducto.use(async(req,res,next)=>{
      
     })
     
-    export default proxyProducto;
+    export default proxyProveedores;
