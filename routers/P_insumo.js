@@ -13,7 +13,7 @@ dotenv.config();
  */
 P_insumo.get("/:id?",verificaToken,(req,res)=>{
     let sql = (req.params.id)
-    ?[`SELECT * FROM Producto_Insumo WHERE id=${req.params.id}`] 
+    ?[`SELECT * FROM Producto_Insumo WHERE id_PI=${req.params.id}`] 
     :[`SELECT * FROM Producto_Insumo `]
     con.query(...sql,
      (err,data,fils)=>{

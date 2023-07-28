@@ -11,7 +11,7 @@ dotenv.config();
  */
 Pedido.get("/:id?",verificaToken,(req,res)=>{
     let sql = (req.params.id)
-    ?[`SELECT * FROM pedido WHERE id=${req.params.id}`] 
+    ?[`SELECT * FROM pedido WHERE id_pedido=${req.params.id}`] 
     :[`SELECT * FROM pedido WHERE estado!='Entregado' `]
     con.query(...sql,
      (err,data,fils)=>{

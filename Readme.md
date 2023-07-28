@@ -19,7 +19,7 @@ Este objetivo se centra en mejorar la gestión de textiles, abarcando aspectos c
 
 **Diagrama de base datos:**
 
-![diagrama](https://github.com/LauraRamirezCampus/Gestion-de-productos-textiles-deportivos/assets/124936044/3399c3bf-a4d4-4c4a-802a-2574da82b7a2)
+![1690512635035](image/Readme/1690512635035.png)
 
 ## __Instalacion:__
 

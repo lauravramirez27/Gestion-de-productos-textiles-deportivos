@@ -13,7 +13,7 @@ dotenv.config();
  */
 Inventario.get("/:id?",verificaToken,(req,res)=>{
     let sql = (req.params.id)
-    ?[`SELECT * FROM inventario WHERE id=${req.params.id}`] 
+    ?[`SELECT * FROM inventario WHERE id_Inventario=${req.params.id}`] 
     :[`SELECT * FROM inventario `]
     con.query(...sql,
      (err,data,fils)=>{

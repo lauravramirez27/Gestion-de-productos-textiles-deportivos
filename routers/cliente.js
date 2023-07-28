@@ -11,7 +11,7 @@ dotenv.config();
  */
 Cliente.get("/:id?",verificaToken,(req,res)=>{
     let sql = (req.params.id)
-    ?[`SELECT * FROM cliente WHERE id=${req.params.id}`] 
+    ?[`SELECT * FROM cliente WHERE id_Cliente=${req.params.id}`] 
     :[`SELECT * FROM cliente ORDER BY nombre`]
     con.query(...sql,
      (err,data,fils)=>{

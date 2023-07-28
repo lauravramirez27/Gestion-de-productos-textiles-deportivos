@@ -15,7 +15,7 @@ Productos.get("/:id_Producto?",verificaToken,(req,res)=>{
     
     let sql = 
     (req.params.id_Producto)
-    ?[`SELECT * FROM producto WHERE id=${req.params.id_Producto}`] 
+    ?[`SELECT * FROM producto WHERE id_Producto=${req.params.id_Producto}`] 
     :[`SELECT * FROM producto ORDER BY nombre`]
     
     con.query(...sql,

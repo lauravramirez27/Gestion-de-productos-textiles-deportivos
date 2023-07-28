@@ -14,7 +14,7 @@ dotenv.config();
  */
 Proveedores.get("/:id?",verificaToken,(req,res)=>{
     let sql = (req.params.id)
-    ?[`SELECT * FROM proveedores WHERE id=${req.params.id}`] 
+    ?[`SELECT * FROM proveedores WHERE id_Proveedor=${req.params.id}`] 
     :[`SELECT * FROM proveedores ORDER BY nombre`]
     con.query(...sql,
      (err,data,fils)=>{

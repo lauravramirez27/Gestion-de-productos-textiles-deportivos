@@ -12,7 +12,7 @@ dotenv.config();
  */
 Insumos.get("/:id?",verificaToken,(req,res)=>{
     let sql = (req.params.id)
-    ?[`SELECT * FROM Insumos WHERE id=${req.params.id}`] 
+    ?[`SELECT * FROM Insumos WHERE id_Insumo=${req.params.id}`] 
     :[`SELECT * FROM Insumos ORDER BY nombre`]
     con.query(...sql,
      (err,data,fils)=>{
