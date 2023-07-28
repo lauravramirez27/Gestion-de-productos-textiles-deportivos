@@ -17,7 +17,7 @@ Este objetivo se centra en mejorar la gestión de textiles, abarcando aspectos c
 
 **5.** Eliminar un producto.
 
-**Diagrama de base datos:**
+**Diagrama de base datos:** 
 
 ![1690512635035](image/Readme/1690512635035.png)
 
@@ -332,7 +332,6 @@ Se debe enviar en el Body los datos de la siguiente manera:
 
 <hr>
 
-
 **METODO:GET**
 
 * lista los Cliente.
@@ -353,7 +352,6 @@ Una vez ingresado el token en el encabezado(header) de tu solicitudes puedes hac
 ``http://127.1.1.1:5507/Cliente/1``
 
 <hr>
-
 
 **METODO:GET**
 
@@ -392,5 +390,3 @@ Se debe enviar en el Body los datos de la siguiente manera:
     "cantidad": 20
   }
 ```
-
-
