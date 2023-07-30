@@ -205,10 +205,10 @@ Se debe enviar en el Body los datos de la siguiente manera:
 
 ```
 {
-    "id_Proveedor": 189,
-    "nombre": "Proveedor central",
-    "direccion": "Calle 123, Ciudad X",
-    "telefono": "99999999"
+    "id_Proveedor": 1232134,
+    "nombre": "Proveedor A",
+    "direccion": "Barrio San Miguel",
+    "telefono": "aa"
   }
 ```
 

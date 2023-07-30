@@ -141,7 +141,7 @@ VALUES
     (1, 1, 1, 'En Proceso', 20),
     (2, 2, 2, 'Entregado', 15);
 
-SELECT *
+SELECT * FROM 
 
 
 
