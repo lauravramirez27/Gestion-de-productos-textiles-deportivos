@@ -18,8 +18,9 @@ export async function verificaToken(req, res, next) {
       console.log(endpoint);
       console.log(req.baseUrl);
       if (`/${endpoint.tabla}` !== req.baseUrl) {
+        console.log(`/${endpoint.tabla}`);
         
-        return res.status(403).send({ "error": "No tienes permiso para acceder a este endpoint"});
+        return res.status(403).send({ "error": "No es el token correcto para acceder a este endPoint"});
       }
       req.jwtData = jwtData;
       next();

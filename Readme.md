@@ -17,7 +17,7 @@ Este objetivo se centra en mejorar la gestión de textiles, abarcando aspectos c
 
 **5.** Eliminar un producto.
 
-**Diagrama de base datos:** 
+**Diagrama de base datos: 	**
 
 ![1690512635035](image/Readme/1690512635035.png)
 
