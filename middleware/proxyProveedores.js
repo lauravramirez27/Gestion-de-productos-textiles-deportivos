@@ -6,13 +6,13 @@ import { jwtVerify } from "jose";
 
 const proxyProveedores = express(); 
 proxyProveedores.use((req,res,next)=>{
-     console.log(req.body);
+     // console.log(req.body);
 
     try {
             let dataValidada =plainToClass(proveedor, req.body ,{excludeExtraneousValues: true});
             req.body = JSON.parse(JSON.stringify(dataValidada));
-            console.log(dataValidada);
-            console.log(req.body);
+            // console.log(dataValidada);
+            // console.log(req.body);
             next();
         }catch (err){
             res.status(err.status).send(err);

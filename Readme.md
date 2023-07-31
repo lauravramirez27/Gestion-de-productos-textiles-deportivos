@@ -239,7 +239,7 @@ Una vez ingresado el token en el encabezado(header) de tu solicitudes puedes hac
 
 * Crea un nuevo Insumos
 
-``http://127.1.1.1:5507/Insumos``
+``http://127.1.1.1:5507/Insumos/insumo``
 Se debe enviar en el Body los datos de la siguiente manera:
 
 ```
@@ -249,6 +249,14 @@ Se debe enviar en el Body los datos de la siguiente manera:
     "color": "Azul"
   }
 ```
+
+<hr>
+
+**METODO:GET**
+
+Muestre los insumos que se necesita para un producto
+
+``http://127.1.1.1:5507/Insumos/N_insumos``
 
 <hr>
 
@@ -301,7 +309,7 @@ URL para generar token de este endPoint:
 ``http://127.1.1.1:5507/token/i?tabla=Pedido``
 
 Una vez ingresado el token en el encabezado(header) de tu solicitudes puedes hacer esta peticion con esta URL:
-``http://127.1.1.1:5507/Pedido``
+``http://127.1.1.1:5507/Pedido/pedido``
 
 <hr>
 
@@ -362,31 +370,17 @@ URL para generar token de este endPoint:
 ``http://127.1.1.1:5507/token/i?tabla=Pedido``
 
 Una vez ingresado el token en el encabezado(header) de tu solicitudes puedes hacer esta peticion con esta URL:
-``http://127.1.1.1:5507/Pedido``
+``http://127.1.1.1:5507/Pedido/pedido``
+
+
+
+ **METODO:GET**
+
+ Muestra los insumos que se necesita para un producto
+
+``http://127.1.1.1:5507/Pedido/Productospedidos``
 
 <hr>
 
-**METODO:GET**
 
-* Busca el Pedido por id
 
-``http://127.1.1.1:5507/Pedido/1``
-
-<hr>
-
-**METODO:POST**
-
-* Crea un nuevo Pedido
-
-``http://127.1.1.1:5507/Pedido``
-Se debe enviar en el Body los datos de la siguiente manera:
-
-```
-{
-    "id_pedido": 1,
-    "id_cliente": 1,
-    "id_Inventario": 1,
-    "estado": "En Proceso",
-    "cantidad": 20
-  }
-```

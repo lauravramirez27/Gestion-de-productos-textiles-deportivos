@@ -39,7 +39,7 @@ export class proveedor {
       * validar color
       */
      @Expose({name:"telefono"})
-     @Transform(({value})=>{ if(/^[a-z A-Z]+$/.test(value) || value == null)return value; else throw {status:400, message: "Error en el tipo de parametro telefono"}},{toClassOnly:true})
+     @Transform(({value})=>{ if(/^[0-9]+$/.test(value) || value == null)return value; else throw {status:400, message: "Error en el tipo de parametro telefono"}},{toClassOnly:true})
      telefono:String;
 
     constructor(p1:number,p2:string,p3:string,p4:string) {

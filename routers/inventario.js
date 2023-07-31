@@ -2,7 +2,7 @@ import { Router } from "express";
 import dotenv from "dotenv";
 import con from "../data/data.js";
 import  proxyInventario  from "../middleware/proxyInventario.js";
-//import Encriptar from "../JWT/Encriptar.js";
+
 import { verificaToken } from "../JWT/ValidaToken.js";
 
 const Inventario = Router();
@@ -22,6 +22,18 @@ Inventario.get("/:id?",verificaToken,(req,res)=>{
          res.send(data);
      }
      )});
+
+     Inventario.get("/:id?",verificaToken,(req,res)=>{
+        let sql = (req.params.id)
+        ?[`SELECT * FROM inventario WHERE id_Inventario=${req.params.id}`] 
+        :[`SELECT * FROM inventario `]
+        con.query(
+         (err,data,fils)=>{
+             console.log(err);
+             console.table(data);
+             res.send(data);
+         }
+         )});
 /**
  * Crea registro de inventario
  */

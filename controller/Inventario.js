@@ -11,7 +11,7 @@ import { Transform, Expose } from "class-transformer";
 /**
  * Data a validar
  * {
-    "id_Inventario": 1222,
+    "id_Inventario": 99,
     "id_Producto": 1,
     "cantidad"id_Inventario: 80,
     

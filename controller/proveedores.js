@@ -11,7 +11,7 @@ import { Transform, Expose } from "class-transformer";
 /**
  * Datos a validar
  * {
-    "id_Proveedor": 3,
+    "id_Proveedor": 90,
     "nombre": "Proveedor c",
     "direccion": "Calle 123, Ciudad X",
     "telefono": "99999999"
@@ -51,7 +51,7 @@ __decorate([
 ], proveedor.prototype, "direccion", void 0);
 __decorate([
     Expose({ name: "telefono" }),
-    Transform(({ value }) => { if (/^[a-z A-Z]+$/.test(value) || value == null)
+    Transform(({ value }) => { if (/^[0-9]+$/.test(value) || value == null)
         return value;
     else
         throw { status: 400, message: "Error en el tipo de parametro telefono" }; }, { toClassOnly: true }),

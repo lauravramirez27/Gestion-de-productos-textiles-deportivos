@@ -12,7 +12,7 @@ import { Transform, Expose } from "class-transformer";
  * Datos a validar
  *
  * {
-    "id_Producto": 1,
+    "id_Producto": 99,
     "id_Categoria": 1,
     "nombre": "Camiseta Deportiva ",
     "talla": "M",

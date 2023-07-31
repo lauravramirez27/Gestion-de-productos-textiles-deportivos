@@ -13,7 +13,7 @@ import { Transform, Expose } from "class-transformer";
  * {
     "id_Insumo": 3,
     "nombre": "Tela Elástica",
-    "color": 0
+    "color": "Morada"
   }
  */
 export class insumo {

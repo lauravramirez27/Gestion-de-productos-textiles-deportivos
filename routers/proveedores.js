@@ -37,9 +37,15 @@ Proveedores.get("/:id?",verificaToken,(req,res)=>{
         `INSERT INTO proveedores SET ?`,
         req.body,
         (err, data, fils)=>{
-            console.log(err);
-            console.table(data);
-            res.status(200).send(data)
+            if(err){
+                console.log(err);
+                if (err.errno===1062) {
+                    res.send({Status:200,Message:"El id ingresado ya existe,ingrese un nuevo id"})
+                }else{
+                res.send(err)}
+            }else{
+                res.send({Status:200, Message:"La data se ha agregado"})
+            }
         }
     )
 })

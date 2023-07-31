@@ -2,7 +2,7 @@ import { Router } from "express";
 import con from "../data/data.js";
 import proxyP_insumo from "../middleware/proxyP_insumo.js";
 import dotenv from "dotenv";
-//import Encriptar from "../JWT/Encriptar.js";
+
 import { verificaToken } from "../JWT/ValidaToken.js";
 
 const P_insumo = Router();
